@@ -1,0 +1,138 @@
+<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document">
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Modal cascading tabs-->
+            <div class="modal-c-tabs">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i
+                                class="fas fa-user mr-1"></i>
+                            Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i
+                                class="fas fa-user-plus mr-1"></i>
+                            Register</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panels -->
+                <div class="tab-content">
+                    <!--Panel 7-->
+                    <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+                        <!--Body-->
+                        <div class="modal-body mb-1">
+                            <div class="md-form form-sm mb-5">
+                                <label>Email address</label>
+                                <input type="text" class="form-control" name="emailId" placeholder="abc@xyz.com"
+                                    #emailId="ngModel" [(ngModel)]="user.emailId" required>
+                                <small class="form-text text-danger" *ngIf="emailId.dirty && emailId.invalid">Email id
+                                    can't be empty</small>
+
+                            </div>
+
+                            <div class="md-form form-sm mb-4">
+                                <label>Password</label>
+                                <input type="password" class="form-control" name="password" #password="ngModel"
+                                    [(ngModel)]="user.password" required>
+                                <small class="form-text text-danger" *ngIf="password.dirty && password.invalid">Password
+                                    can't be empty</small>
+                            </div>
+                            <div class="text-center mt-2">
+                                <button class="btn btn-info">Log in <i class="fas fa-sign-in ml-1"></i></button>
+                            </div>
+
+                            <div class="alert alert-success d-flex align-items-center mt-2" role="alert" *ngIf="successFlag">
+                                <!-- *ngIf="successFlag" -->
+                                <i class="material-icons">check_circle</i>
+                                <div class="ms-2">
+                                    Login is successfull ! Click
+                                    <a routerLink="/">here</a> to go to home.
+                                </div>
+                            </div>
+
+                            <div class="alert alert-danger d-flex align-items-center mt-2" role="alert" *ngIf="errorFlag">
+                                <!-- *ngIf="errorFlag" -->
+                                <i class="material-icons"> warning </i>
+                                <div class="ms-2">Login credentials are invalid</div>
+                            </div>
+                        </div> 
+
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="options text-center text-md-right mt-1">
+                                <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+                            </div>
+                            <button type="button" class="btn btn-outline-info waves-effect ml-auto"
+                                data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                    <!--/.Panel 7-->
+
+                    <!--Panel 8-->
+                    <div class="tab-pane fade" id="panel8" role="tabpanel">
+
+                        <!--Body-->
+                        <div class="modal-body">
+                            <div class="md-form form-sm mb-5">
+                                <label>Email address</label>
+                                <input type="text" class="form-control" name="emailId" placeholder="abc@xyz.com"
+                                    #emailId="ngModel" [(ngModel)]="user.emailId" required>
+                                <small class="form-text text-danger" *ngIf="emailId.dirty && emailId.invalid">Email id
+                                    can't be empty</small>
+                            </div>
+
+                            <div class="md-form form-sm mb-5">
+                                <label>Phone Number</label>
+                                <input type="text" class="form-control" name="phoneNumber"
+                                    oninput="this.value=this.value.replace(/[^0-9]/g,'');" #phoneNumber="ngModel"
+                                    [(ngModel)]="user.phoneNumber" placeholder="123-456-7890" required>
+                                <small class="form-text text-danger"
+                                    *ngIf="phoneNumber.dirty && phoneNumber.invalid">Phone Number
+                                    can't be empty</small>
+                            </div>
+
+                            <div class="md-form form-sm mb-5">
+                                <label>Password</label>
+                                <input type="password" class="form-control" name="password" #password="ngModel"
+                                    [(ngModel)]="user.password" required>
+                                <small class="form-text text-danger" *ngIf="password.dirty && password.invalid">Password
+                                    can't be empty</small>
+                            </div>
+
+                            <div class="md-form form-sm mb-4">
+                                <label>Confirm Password</label>
+                                <input type="password" class="form-control" name="password" #password="ngModel"
+                                    [(ngModel)]="user.password" required>
+                                <small class="form-text text-danger" *ngIf="password.dirty && password.invalid">Password
+                                    can't be empty</small>
+                            </div>
+
+                            <div class="text-center form-sm mt-2">
+                                <button class="btn btn-info">Sign up <i class="fas fa-sign-in ml-1"></i></button>
+                            </div>
+
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="options text-right">
+                                <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
+                            </div>
+                            <button type="button" class="btn btn-outline-info waves-effect ml-auto"
+                                data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <!--/.Panel 8-->
+                </div>
+
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
