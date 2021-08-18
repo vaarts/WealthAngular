@@ -11,6 +11,10 @@ export class AuthService {
     this.currentUser = new User();
   }
 
+  signUp(user: any) {
+    return this.http.post<User>('http://localhost:8080/user/add', user);
+  }
+
   signIn(user: any) {
     return this.http.post<User>('http://localhost:8080/signin', user);
   }
