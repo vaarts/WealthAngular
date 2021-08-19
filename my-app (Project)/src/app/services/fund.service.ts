@@ -13,6 +13,12 @@ export class FundService {
     this.fundsAmc=[];
   }
 
+  getAllByFundAmc(){
+    this.http.get<Fund[]>('http://localhost:8080/fundAllAmc').subscribe((res)=>{
+      this.funds = res;
+    });
+  }
+
   getFundAmc(){
     this.http.get<Fund[]>('http://localhost:8080/fundAmc').subscribe((res)=>{
       this.fundsAmc = res;

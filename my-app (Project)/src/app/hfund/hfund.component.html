@@ -10,7 +10,7 @@
           AMC
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" *ngFor="let fundamc of fundService.fundsAmc">{{fundamc}}</a>
+          <a class="dropdown-item" (click)="findByAmc()" *ngFor="let fundamc of fundService.fundsAmc">{{fundamc}}</a>
         </div>
       </div>
 
@@ -58,7 +58,7 @@
   <div class="container">
     <div class="row" style="margin-left: 25px;">
         <div class="card mb-4" *ngFor="let fund of fundService.funds" style="width: 18rem; margin-right:50px ;">
-          <img src="..." class="card-img-top" alt="...">
+          <img [src]="fund.imgSrc" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{fund.fundName}}</h5>
             <p class="card-text">{{fund.fundDesc}}</p>
@@ -91,3 +91,5 @@
     </div>
   </div> -->
 </div>
+
+<app-footer></app-footer>

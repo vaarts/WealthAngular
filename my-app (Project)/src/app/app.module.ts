@@ -12,6 +12,7 @@ import { HFundComponent } from './hfund/hfund.component';
 import { FundService } from './services/fund.service';
 import { HomefundComponent } from './homefund/homefund.component';
 import { WhyvavjaComponent } from './whyvavja/whyvavja.component';
+import { FooterComponent } from './footer/footer.component';
 
 export const routes: Routes = [
   {
@@ -37,6 +38,7 @@ export const routes: Routes = [
     HFundComponent,
     HomefundComponent,
     WhyvavjaComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ export class Fund{
     fundNav: number;
     fundMgr:string;
     fundDesc:string;
+    imgSrc:string;
 
     constructor(){
         this.fundId = 0;
@@ -22,5 +23,6 @@ export class Fund{
         this.fundNav=0;
         this.fundMgr='';
         this.fundDesc='';
+        this.imgSrc='';
     }
  }

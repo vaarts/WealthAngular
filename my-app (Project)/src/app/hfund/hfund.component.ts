@@ -10,10 +10,13 @@ export class HFundComponent implements OnInit {
 
   constructor(public fundService: FundService) {
     fundService.getFunds();
-
     fundService.getFundAmc();
+
   }
 
+  findByAmc(){
+    this.fundService.getAllByFundAmc();
+  }
 
   ngOnInit(): void {
   }
