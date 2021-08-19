@@ -7,8 +7,16 @@ import { Fund } from '../model/fund';
 })
 export class FundService {
   funds:Fund[];
+  fundsAmc:Fund[];
   constructor(public http: HttpClient) { 
     this.funds=[];
+    this.fundsAmc=[];
+  }
+
+  getFundAmc(){
+    this.http.get<Fund[]>('http://localhost:8080/fundAmc').subscribe((res)=>{
+      this.fundsAmc = res;
+    });
   }
 
   getFunds(){

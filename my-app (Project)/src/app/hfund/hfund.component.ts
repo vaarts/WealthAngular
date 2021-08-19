@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Fund } from '../model/fund';
 import { FundService } from '../services/fund.service';
 
 @Component({
@@ -8,10 +7,11 @@ import { FundService } from '../services/fund.service';
   styleUrls: ['./hfund.component.css']
 })
 export class HFundComponent implements OnInit {
-  
+
   constructor(public fundService: FundService) {
     fundService.getFunds();
 
+    fundService.getFundAmc();
   }
 
 

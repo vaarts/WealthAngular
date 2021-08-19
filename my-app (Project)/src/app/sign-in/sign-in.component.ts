@@ -12,6 +12,7 @@ export class SignInComponent implements OnInit {
   user: User;
   successFlag: boolean;
   errorFlag: boolean;
+  
   constructor(public auth: AuthService) {
     this.user = new User();
     this.successFlag = false;

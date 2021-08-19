@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { HFundComponent } from './hfund/hfund.component';
 import { FundService } from './services/fund.service';
 import { HomefundComponent } from './homefund/homefund.component';
+import { WhyvavjaComponent } from './whyvavja/whyvavja.component';
 
 export const routes: Routes = [
   {
@@ -35,6 +36,7 @@ export const routes: Routes = [
     HomeComponent,
     HFundComponent,
     HomefundComponent,
+    WhyvavjaComponent,
   ],
   imports: [
     BrowserModule,

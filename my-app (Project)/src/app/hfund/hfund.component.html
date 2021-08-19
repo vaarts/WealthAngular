@@ -10,7 +10,7 @@
           AMC
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" *ngFor="let fund of fundService.funds">{{fund.fundAmc}}</a>
+          <a class="dropdown-item" *ngFor="let fundamc of fundService.fundsAmc">{{fundamc}}</a>
         </div>
       </div>
 
@@ -20,9 +20,9 @@
           Risks
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">High</a>
+          <a class="dropdown-item" href="#">Medium</a>
+          <a class="dropdown-item" href="#">Low</a>
         </div>
       </div>
 
@@ -32,9 +32,9 @@
           Return
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">After 1 month</a>
+          <a class="dropdown-item" href="#">After 1 Year</a>
+          <a class="dropdown-item" href="#">After 3 Year</a>
         </div>
       </div>
 
@@ -53,6 +53,7 @@
     </div>
   </div>
   <br>
+
   <!-- <div class="d-flex justify-content-around "> -->
   <div class="container">
     <div class="row" style="margin-left: 25px;">
