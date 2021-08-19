@@ -28,11 +28,11 @@
             <div class="modal-body mb-1">
               <form (ngSubmit)="signInSubmit(signInForm)" #signInForm="ngForm">
                 <div class="mb-3">
-                  <label for="userName" class="form-label">Username</label>
-                  <input type="text" class="form-control" id="userName" name="userName" [(ngModel)]="user.userName"
-                    #username="ngModel" placeholder="enter userName" required />
+                  <label for="userEmail" class="form-label" pattern=".com">User Email</label>
+                  <input type="text" class="form-control" id="userEmail" name="userEmail" [(ngModel)]="user.userEmail"
+                    #useremail="ngModel" placeholder="enter user email" required />
                   <p class="small text-danger my-2" *ngIf="username.dirty && username.invalid">
-                    Username can't be empty !
+                    Email can't be empty !
                   </p>
                 </div>
 
@@ -54,7 +54,7 @@
                 <i class="material-icons">check_circle</i>
                 <div class="ms-2">
                   Login is successfull ! Click
-                  <a routerLink="/">here</a> to go to home.
+                  <a id="login" routerLink="" data-dismiss="modal">here</a> to go to home.
                 </div>
               </div>
 
@@ -83,38 +83,38 @@
             <div class="modal-body">
               <form (ngSubmit)="signUpSubmit(signUpForm)" #signUpForm="ngForm">
                 <div class="mb-3">
-                  <label for="username" class="form-label">Username</label>
+                  <label for="username" class="form-label">User Name</label>
                   <input type="text" class="form-control" id="username" name="username" [(ngModel)]="user.userName"
-                    #username="ngModel" placeholder="enter username" required />
+                    #username="ngModel" placeholder="enter user name" required />
                   <p class="small text-danger my-2" *ngIf="username.dirty && username.invalid">
-                    Username can't be empty !
+                    User Name can't be empty !
                   </p>
                 </div>
 
                 <div class="mb-3">
-                  <label for="name" class="form-label">UserEmail</label>
+                  <label for="name" class="form-label">User Email</label>
                   <input type="text" class="form-control" id="name" name="name" [(ngModel)]="user.userEmail"
-                    #name="ngModel" placeholder="enter name" required />
+                    #name="ngModel" placeholder="enter Email" required />
                   <p class="small text-danger my-2" *ngIf="name.dirty && name.invalid">
-                    User Email can't be empty !
+                    Email can't be empty !
                   </p>
                 </div>
 
                 <div class="mb-3">
-                  <label for="userPhoneNumber" class="form-label">UserPhoneNumber</label>
+                  <label for="userPhoneNumber" class="form-label">User Phone Number</label>
                   <input type="text" class="form-control" id="userPhoneNumber" name="userPhoneNumber"
-                    [(ngModel)]="user.userPhoneNumber" #name="ngModel" placeholder="enter PhoneNumber" required />
+                    [(ngModel)]="user.userPhoneNumber" #name="ngModel" placeholder="enter Phone Number" required />
                   <p class="small text-danger my-2" *ngIf="name.dirty && name.invalid">
-                    PhoneNumber Email can't be empty !
+                    Phone Number  can't be empty !
                   </p>
                 </div>
 
                 <div class="mb-3">
-                  <label for="userAge" class="form-label">UserAge</label>
+                  <label for="userAge" class="form-label">User Age</label>
                   <input type="text" class="form-control" id="userAge" name="userAge" [(ngModel)]="user.userAge"
                     #name="ngModel" placeholder="enter Age" required />
                   <p class="small text-danger my-2" *ngIf="name.dirty && name.invalid">
-                    Age Email can't be empty !
+                    Age  can't be empty !
                   </p>
                 </div>
 
@@ -150,9 +150,6 @@
             </div>
             <!--Footer-->
             <div class="modal-footer">
-              <div class="options text-right">
-                <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
-              </div>
               <button type="button" class="btn btn-outline-info waves-effect ml-auto"
                 data-dismiss="modal">Close</button>
             </div>

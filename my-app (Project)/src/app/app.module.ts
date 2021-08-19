@@ -8,6 +8,9 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HFundComponent } from './hfund/hfund.component';
+import { FundService } from './services/fund.service';
+import { HomefundComponent } from './homefund/homefund.component';
 
 export const routes: Routes = [
   {
@@ -17,6 +20,10 @@ export const routes: Routes = [
   {
     path: 'signin',
     component: SignInComponent,
+  },
+  {
+    path: 'funds',
+    component: HFundComponent,
   }
 ];
 
@@ -26,14 +33,17 @@ export const routes: Routes = [
     NavbarComponent,
     SignInComponent,
     HomeComponent,
+    HFundComponent,
+    HomefundComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
+    
   ],
-  providers: [],
+  providers: [FundService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
