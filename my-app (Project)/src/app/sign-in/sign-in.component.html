@@ -9,12 +9,12 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i
-                class="fas fa-user mr-1"></i>
-              Sign</a>
+            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab" id="green"><i
+                class="fas fa-user mr-1" ></i>
+              Sign In</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab" id="green"><i class="fas fa-user-plus mr-1"></i>
               Sign Up</a>
           </li>
         </ul>
@@ -45,7 +45,7 @@
                   </p>
                 </div>
 
-                <button type="submit" class="btn btn-primary" [disabled]="signInForm.pristine || signInForm.invalid">
+                <button type="submit" class="btn" [disabled]="signInForm.pristine || signInForm.invalid" id="bgreen">
                   Submit
                 </button>
               </form>
@@ -54,7 +54,7 @@
                 <i class="material-icons">check_circle</i>
                 <div class="ms-2">
                   Login is successfull ! Click
-                  <a id="login" routerLink="" data-dismiss="modal">here</a> to go to home.
+                  <a id="login" routerLink="" data-dismiss="modal" style="color:darkslategrey">here</a> to go to home.
                 </div>
               </div>
 
@@ -67,10 +67,10 @@
             <!--Footer-->
             <div class="modal-footer">
               <div class="options text-center text-md-right mt-1">
-                <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+                <p>Forgot <a href="#" class="blue-text" id="green">Password?</a></p>
               </div>
               <button type="button" class="btn btn-outline-info waves-effect ml-auto" routerLink=""
-                data-dismiss="modal">Close</button>
+                data-dismiss="modal" id="bgreen">Close</button>
             </div>
 
           </div>
@@ -127,7 +127,7 @@
                   </p>
                 </div>
 
-                <button type="submit" class="btn btn-primary" [disabled]="signUpForm.pristine || signUpForm.invalid">
+                <button type="submit" class="btn btn-primary" [disabled]="signUpForm.pristine || signUpForm.invalid" id="bgreen">
                   Submit
                 </button>
               </form>
@@ -135,7 +135,7 @@
               <div class="alert alert-success d-flex align-items-center mt-2" role="alert" *ngIf="successFlag">
                 <i class="material-icons">check_circle</i>
                 <div class="ms-2">
-                  New user created successfully ! Click <a routerLink="/signin">here</a> to
+                  New user created successfully ! Proceed to
                   login.
                 </div>
               </div>
@@ -151,7 +151,7 @@
             <!--Footer-->
             <div class="modal-footer">
               <button type="button" class="btn btn-outline-info waves-effect ml-auto"
-                data-dismiss="modal">Close</button>
+                data-dismiss="modal" id="bgreen">Close</button>
             </div>
           </div>
           <!--/.Panel 8-->

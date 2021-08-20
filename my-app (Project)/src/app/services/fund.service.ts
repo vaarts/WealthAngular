@@ -7,21 +7,37 @@ import { Fund } from '../model/fund';
 })
 export class FundService {
   funds:Fund[];
-  fundsAmc:Fund[];
+  fundsAmc:string[];
+  fundsRisk:string[];
   constructor(public http: HttpClient) { 
     this.funds=[];
     this.fundsAmc=[];
+    this.fundsRisk=[];
   }
 
-  getAllByFundAmc(){
-    this.http.get<Fund[]>('http://localhost:8080/fundAllAmc').subscribe((res)=>{
+  getAllByFundAmc(fundAmc :string){
+    this.http.get<Fund[]>('http://localhost:8080/funds/'+ fundAmc).subscribe((res)=>{
+      this.funds = res;
+    });
+  }
+
+  getAllByFundRisk(fundRisk :string){
+    this.http.get<Fund[]>('http://localhost:8080/fundsRisk/'+ fundRisk).subscribe((res)=>{
       this.funds = res;
     });
   }
 
   getFundAmc(){
-    this.http.get<Fund[]>('http://localhost:8080/fundAmc').subscribe((res)=>{
+    this.http.get<string[]>('http://localhost:8080/fundAmc').subscribe((res)=>{
       this.fundsAmc = res;
+      console.log(res)
+    });
+  }
+
+  getFundRisk(){
+    this.http.get<string[]>('http://localhost:8080/fundRisk').subscribe((res)=>{
+      this.fundsRisk = res;
+      console.log(res)
     });
   }
 

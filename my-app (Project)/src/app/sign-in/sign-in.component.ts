@@ -33,6 +33,7 @@ export class SignInComponent implements OnInit {
           signInForm.form.markAsPristine();
           this.auth.currentUser = res;
           this.successFlag = true;
+          console.log(res.userName)
         } else {
           this.errorFlag = true;
         }

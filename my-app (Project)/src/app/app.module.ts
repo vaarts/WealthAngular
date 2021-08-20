@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -13,6 +14,8 @@ import { FundService } from './services/fund.service';
 import { HomefundComponent } from './homefund/homefund.component';
 import { WhyvavjaComponent } from './whyvavja/whyvavja.component';
 import { FooterComponent } from './footer/footer.component';
+import { CalculatorComponent } from './calculator/calculator.component';
+import { ReturnComponent } from './return/return.component';
 
 export const routes: Routes = [
   {
@@ -26,6 +29,14 @@ export const routes: Routes = [
   {
     path: 'funds',
     component: HFundComponent,
+  },
+  {
+    path:'calculator',
+    component: CalculatorComponent,
+  },
+  {
+    path:'return',
+    component: ReturnComponent,
   }
 ];
 
@@ -39,9 +50,12 @@ export const routes: Routes = [
     HomefundComponent,
     WhyvavjaComponent,
     FooterComponent,
+    CalculatorComponent,
+    ReturnComponent,
   ],
   imports: [
     BrowserModule,
+    ChartsModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),

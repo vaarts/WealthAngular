@@ -9,15 +9,25 @@ import { FundService } from '../services/fund.service';
 export class HFundComponent implements OnInit {
 
   constructor(public fundService: FundService) {
-    fundService.getFunds();
-    fundService.getFundAmc();
+    
 
   }
 
-  findByAmc(){
-    this.fundService.getAllByFundAmc();
+  findByAmc(fundAmc: string){
+    this.fundService.getAllByFundAmc(fundAmc);
+  }
+  
+  findByRisk(fundRisk: string){
+    this.fundService.getAllByFundRisk(fundRisk);
+  }
+
+  fundsAll(){
+    this.fundService.getFunds();
   }
 
   ngOnInit(): void {
+    this.fundService.getFunds();
+    this.fundService.getFundAmc();
+    this.fundService.getFundRisk();
   }
 }
