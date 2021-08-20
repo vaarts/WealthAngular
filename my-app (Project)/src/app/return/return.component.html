@@ -16,10 +16,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let history of fundService.fundHistory">
-                <td>{{history.fundName}}</td>
-                <td>{{history.fh1month}}</td>
-                <td>{{history.fh1year}}</td>
-                <td>@mdo</td>
+                <td *ngFor="let h of history">{{h}}</td>
             </tr>
         </tbody>
     </table>

@@ -9,15 +9,8 @@ import { FundService } from '../services/fund.service';
 export class ReturnComponent implements OnInit {
 
   constructor(public fundService: FundService) {
-   }
-
-
-  fundsAndHistory(){
-    this.fundService.getFundAndHistory();
     
-  }
-
-  
+   }
 
   ngOnInit(): void {
     this.fundService.getFundAndHistory();

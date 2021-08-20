@@ -18,13 +18,17 @@ export class CalculatorComponent implements OnInit {
       this.totalInvestment=val.ia+val.mi*val.m;
       totalin=this.totalInvestment;
       this.totalreturn=val.ia+val.mi*Math.pow((1+(val.ar/100)/12),12)+this.totalInvestment
+      totalret=this.totalreturn;
+
   }
   public pieChartOptions: ChartOptions = {
     responsive: true,
     
   };
+  
   public pieChartLabels: Label[] = [['Invested Amount'], 'Return value'];
-  public pieChartData: SingleDataSet = [15, 10];
+  
+  public pieChartData: SingleDataSet = [10, 15];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
   public pieChartPlugins = [];

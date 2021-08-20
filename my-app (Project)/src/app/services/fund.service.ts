@@ -9,7 +9,7 @@ export class FundService {
   funds:Fund[];
   fundsAmc:string[];
   fundsRisk:string[];
-  fundHistory:Fund[];
+  fundHistory:any;
   constructor(public http: HttpClient) { 
     this.funds=[];
     this.fundsAmc=[];
@@ -45,7 +45,7 @@ export class FundService {
 
   getFunds(){
     this.http
-      .get<Fund[]>('http://localhost:8080/funds/all')
+      .get<any>('http://localhost:8080/funds/all')
       .subscribe((res) => {
         this.funds = res;
       });
