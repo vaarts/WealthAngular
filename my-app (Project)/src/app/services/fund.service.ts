@@ -9,10 +9,12 @@ export class FundService {
   funds:Fund[];
   fundsAmc:string[];
   fundsRisk:string[];
+  fundHistory:Fund[];
   constructor(public http: HttpClient) { 
     this.funds=[];
     this.fundsAmc=[];
     this.fundsRisk=[];
+    this.fundHistory=[];
   }
 
   getAllByFundAmc(fundAmc :string){
@@ -46,6 +48,16 @@ export class FundService {
       .get<Fund[]>('http://localhost:8080/funds/all')
       .subscribe((res) => {
         this.funds = res;
+      });
+  }
+
+
+  getFundAndHistory(){
+    this.http
+      .get<Fund[]>('http://localhost:8080/funds/all/join')
+      .subscribe((res) => {
+        this.fundHistory = res;
+        console.log(this.fundHistory)
       });
   }
 }

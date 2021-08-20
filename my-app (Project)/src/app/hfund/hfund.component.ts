@@ -9,8 +9,6 @@ import { FundService } from '../services/fund.service';
 export class HFundComponent implements OnInit {
 
   constructor(public fundService: FundService) {
-    
-
   }
 
   findByAmc(fundAmc: string){
@@ -25,9 +23,12 @@ export class HFundComponent implements OnInit {
     this.fundService.getFunds();
   }
 
+  
+
   ngOnInit(): void {
     this.fundService.getFunds();
     this.fundService.getFundAmc();
     this.fundService.getFundRisk();
+
   }
 }

@@ -12,6 +12,9 @@ export class Fund{
     fundMgr:string;
     fundDesc:string;
     imgSrc:string;
+    fh1month:string;
+    fh1year:string;
+    fhTotal:string;
 
     constructor(){
         this.fundId = 0;
@@ -24,5 +27,8 @@ export class Fund{
         this.fundMgr='';
         this.fundDesc='';
         this.imgSrc='';
+        this.fh1month='';
+        this.fh1year='';
+        this.fhTotal='';
     }
  }

@@ -15,10 +15,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let fund of fundService.funds">
-                <td>{{fund.fundName}}</td>
-                <td>Mark</td>
-                <td>Otto</td>
+            <tr *ngFor="let history of fundService.fundHistory">
+                <td>{{history.fundName}}</td>
+                <td>{{history.fh1month}}</td>
+                <td>{{history.fh1year}}</td>
                 <td>@mdo</td>
             </tr>
         </tbody>
