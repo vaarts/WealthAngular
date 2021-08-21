@@ -1,3 +1,4 @@
+import { FundService } from './../services/fund.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomefundComponent implements OnInit {
 
-  constructor() { }
+  constructor(public fundService : FundService) { }
+
+  findByAmc(fundAmc: string){
+    this.fundService.getAllByFundAmc(fundAmc);
+  }
 
   ngOnInit(): void {
+    this.fundService.getFunds();
+    this.fundService.getFundAmc();
   }
 
 }

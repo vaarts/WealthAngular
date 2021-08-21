@@ -11,6 +11,15 @@ export class HFundComponent implements OnInit {
   constructor(public fundService: FundService) {
   }
 
+  findByFhTotal(fhTotal : number){
+    this.fundService.getByReturn(fhTotal);
+    
+  }
+
+  findByAum(fundAum : number){
+    this.fundService.getByAum(fundAum);
+  }
+
   findByAmc(fundAmc: string){
     this.fundService.getAllByFundAmc(fundAmc);
   }
@@ -21,12 +30,16 @@ export class HFundComponent implements OnInit {
 
   fundsAll(){
     this.fundService.getFunds();
+
   }
 
-  
+  findById(fundId: number){
+    this.fundService.getByFundId(fundId);
+  }
 
   ngOnInit(): void {
     this.fundService.getFunds();
+    
     this.fundService.getFundAmc();
     this.fundService.getFundRisk();
 

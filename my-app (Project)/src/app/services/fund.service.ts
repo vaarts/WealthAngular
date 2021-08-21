@@ -10,6 +10,8 @@ export class FundService {
   fundsAmc:string[];
   fundsRisk:string[];
   fundHistory:any;
+  fundDetails:any;
+
   constructor(public http: HttpClient) { 
     this.funds=[];
     this.fundsAmc=[];
@@ -29,17 +31,31 @@ export class FundService {
     });
   }
 
+  getByReturn(fhTotal :number){
+    this.http.get<Fund[]>('http://localhost:8080/fundsReturn/'+ fhTotal).subscribe((res)=>{
+      this.funds = res;
+    });
+  }
+
+  getByAum(fundAum :number){
+    this.http.get<Fund[]>('http://localhost:8080/fundsAum/'+ fundAum).subscribe((res)=>{
+      this.funds = res;
+      console.log(res)
+    });
+  }
+
+
   getFundAmc(){
     this.http.get<string[]>('http://localhost:8080/fundAmc').subscribe((res)=>{
       this.fundsAmc = res;
-      console.log(res)
+      
     });
   }
 
   getFundRisk(){
     this.http.get<string[]>('http://localhost:8080/fundRisk').subscribe((res)=>{
       this.fundsRisk = res;
-      console.log(res)
+
     });
   }
 
@@ -60,4 +76,16 @@ export class FundService {
         console.log(this.fundHistory)
       });
   }
+
+
+  getByFundId(fundId :number){
+    this.http.get<Fund[]>('http://localhost:8080/fundsById/'+ fundId).subscribe((res)=>{
+      this.fundDetails = res;
+      console.log(res)
+    });
+  }
+
+ 
+
+
 }

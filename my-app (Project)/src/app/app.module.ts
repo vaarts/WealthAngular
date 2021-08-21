@@ -16,6 +16,10 @@ import { WhyvavjaComponent } from './whyvavja/whyvavja.component';
 import { FooterComponent } from './footer/footer.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ReturnComponent } from './return/return.component';
+import { DetailfundsComponent } from './detailfunds/detailfunds.component';
+import { BuyComponent } from './buy/buy.component';
+import { MyinvestmentComponent } from './myinvestment/myinvestment.component';
+import { MyprofileComponent } from './myprofile/myprofile.component';
 
 export const routes: Routes = [
   {
@@ -37,6 +41,22 @@ export const routes: Routes = [
   {
     path:'return',
     component: ReturnComponent,
+  },
+  {
+    path:'details',
+    component: DetailfundsComponent,
+  },
+  {
+    path:'buy',
+    component: BuyComponent,
+  },
+  {
+    path:'myinvestment',
+    component: MyinvestmentComponent,
+  },
+  {
+    path:'myprofile',
+    component: MyprofileComponent,
   }
 ];
 
@@ -52,6 +72,10 @@ export const routes: Routes = [
     FooterComponent,
     CalculatorComponent,
     ReturnComponent,
+    DetailfundsComponent,
+    BuyComponent,
+    MyinvestmentComponent,
+    MyprofileComponent,
   ],
   imports: [
     BrowserModule,

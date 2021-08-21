@@ -29,10 +29,16 @@
       </div>
 
       <div class="dropdown">
-        <button class="btn btn-secondar" type="button" aria-haspopup="true" aria-expanded="false"
-          style="color: white; background-color: darkslategrey" routerLink="/return">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" style="background-color: darkslategrey">
           Return
         </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" (click)="fundsAll()">All</a>
+          <a class="dropdown-item" (click)="findByFhTotal(20)">upto 20%</a>
+          <a class="dropdown-item" (click)="findByFhTotal(30)">upto 30%</a>
+          <a class="dropdown-item" (click)="findByFhTotal(40)">upto 40%</a>
+        </div>
 
       </div>
 
@@ -42,9 +48,10 @@
           AUM
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" (click)="fundsAll()">All</a>
+          <a class="dropdown-item" (click)="findByAum(10)">upto 10 Cr</a>
+          <a class="dropdown-item" (click)="findByAum(20)">upto 20 Cr</a>
+          <a class="dropdown-item" (click)="findByAum(30)">upto 30 Cr</a>
         </div>
       </div>
 
@@ -55,20 +62,23 @@
   <!-- <div class="d-flex justify-content-around "> -->
   <div class="container">
     <div class="row" style="margin-left: 25px;">
-      <div class="card mb-4" *ngFor="let fund of fundService.funds" style="width: 18rem; margin-right:50px ;">
+      <div class="card mb-4 pointer" *ngFor="let fund of fundService.funds" routerLink="/details"
+        (click)="findById(fund.fundId)" style="width: 18rem; margin-right:50px ;">
         <img [src]="fund.imgSrc" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{fund.fundName}}</h5>
           <p class="card-text">{{fund.fundDesc}}</p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item"><span class="text-muted">AUM :</span> {{fund.fundAum}}</li>
+          <li class="list-group-item"><span class="text-muted">AUM :</span> {{fund.fundAum}} Cr</li>
           <li class="list-group-item"><span class="text-muted">Risks :</span> {{fund.fundRisk}}</li>
           <li class="list-group-item"><span class="text-muted">Type :</span> {{fund.fundType}}</li>
         </ul>
         <div class="card-body">
-          <a href="#" class="card-link">Buy</a>
-          <a href="#" class="card-link">Another link</a>
+          <!-- <a  class="card-link">Details</a> -->
+          <!-- <a  href="#" class="card-link">Buy</a> -->
+          <button class="btn" style="color: white; background-color: darkslategrey; float: right"
+          (click)="findById(fund.fundId)" routerLink="/buy">Buy</button>
         </div>
       </div>
     </div>

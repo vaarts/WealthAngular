@@ -1,0 +1,49 @@
+<div class="container" style="margin-top: 140px;">
+
+    <div class="shadow d-flex position-relative" *ngFor="let fund of fundService.fundDetails">
+        <img [src]="fund[8]" class="flex-shrink-0 me-3" alt="..." style="width:300px">
+        <div>
+            <h5 class="mt-3">{{fund[0]}}</h5>
+            <i class="text-muted">by {{fund[1]}}</i>
+            <ul style="color: rgb(85, 84, 84);">
+                <li>
+                    Bank payment, Finance + Loan Company
+                </li>
+                <li>
+                    Loan & Financial investment, Loans & funding
+                </li>
+                <li>
+                    Payday Loans and Cash Advance
+                </li>
+            </ul>
+            <table class="table">
+                <tr>
+                  <th class="text-muted" scope="col">Return</th>
+                  <th class="text-muted" scope="col">1 Month</th>
+                  <th class="text-muted" scope="col">1 Year</th>
+                  <th class="text-muted" scope="col">Total</th>
+                </tr>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>{{fund[9]}} %</td>
+                  <td>{{fund[10]}} %</td>
+                  <td>{{fund[11]}} %</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+
+        <div style="margin-left: 50px; margin-top: 20px; margin-bottom: 20px;">
+            <div class="vr"></div>
+        </div>
+        <div style="margin-left: 100px;">
+            <h5 style="text-align: center; margin-top: 100px;">Rs 10000</h5>
+            <p class="text-muted" style="text-align: center;">{{date}}</p>
+            <p class="text-muted" style="text-align: center; margin-top: -10px;">Last Updated: 20 Mar 2021</p>
+            <button class="btn" style="color: white; background-color: darkslategrey; margin-left: 60px; align-content: center;">Confirm</button>
+        </div>
+    </div>
+</div>
+<div style="margin-top: 140px;"></div>
+<app-footer></app-footer>
