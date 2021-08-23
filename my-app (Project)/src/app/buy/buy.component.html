@@ -38,17 +38,23 @@
       <div class="vr"></div>
     </div>
     <div style="margin-left: 100px;">
-      <form (ngSubmit)="addUserFund()">
+      <form (ngSubmit)="addUserFund()" *ngIf="!successFlag">
         <div class="form-group" style="margin-top: 90px;">
-          <input type="number" class="form-control" placeholder="Enter Amount" name="ufAmount"  [(ngModel)]="userFund.ufAmount"
-          ngDefaultControl #ufAmount="ngModel">
+          <input type="number" class="form-control" placeholder="Enter Amount" name="ufAmount"
+            [(ngModel)]="userFund.ufAmount" ngDefaultControl #ufAmount="ngModel">
         </div>
-        <p class="text-muted" style="text-align: center;" >{{date}}</p>
+        <p class="text-muted" style="text-align: center;">{{date}}</p>
         <p class="text-muted" style="text-align: center; margin-top: -10px;">Last Updated: 20 Mar 2021</p>
-      <button type="submit" class="btn"
-        style="color: white; background-color: darkslategrey; margin-left: 60px; align-content: center;">Confirm</button>
+        <button type="submit" class="btn"
+          style="color: white; background-color: darkslategrey; margin-left: 60px; align-content: center;">Confirm</button>
       </form>
-      
+      <div class="alert alert-success d-flex align-items-center" role="alert" *ngIf="successFlag"
+        style="margin-top: 90px; margin-left: -60px;">
+        <div class="ms-2"><i class="material-icons" style="margin-left: 40px;">check_circle</i>
+          Congratulations
+          <p>Click <a routerLink="/myinvestment">here </a>to go to My Investments</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

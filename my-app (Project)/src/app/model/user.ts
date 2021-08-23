@@ -5,6 +5,7 @@ export class User {
     userEmail: string;
     userPhoneNumber:String;
     userAge:String;
+    imgSrc: String;
   
     constructor() {
       this.userId = 0;
@@ -13,5 +14,6 @@ export class User {
       this.userPassword = '';
       this.userPhoneNumber='';
       this.userAge='';
+      this.imgSrc='';
     }
   }

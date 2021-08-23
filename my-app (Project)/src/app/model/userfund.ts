@@ -5,6 +5,8 @@ export class UserFund {
     ufType: string;
     ufAmount:number;
     ufDate:String;
+    fundName:String;
+    fundAmc:String
   
     constructor() {
       this.userId = 0;
@@ -13,5 +15,7 @@ export class UserFund {
       this.ufType = '';
       this.ufDate='';
       this.ufAmount=0;
+      this.fundName=''
+      this.fundAmc='';
     }
   }

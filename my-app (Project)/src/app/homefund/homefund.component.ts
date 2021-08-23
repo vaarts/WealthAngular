@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { AuthService } from './../services/auth.service';
 import { FundService } from './../services/fund.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomefundComponent implements OnInit {
 
-  constructor(public fundService : FundService) { }
+  constructor(public fundService : FundService, public auth:AuthService, public router:Router) { }
 
   findByAmc(fundAmc: string){
     this.fundService.getAllByFundAmc(fundAmc);
@@ -17,6 +19,16 @@ export class HomefundComponent implements OnInit {
   ngOnInit(): void {
     this.fundService.getFunds();
     this.fundService.getFundAmc();
+  }
+
+  isSignin(){
+    if (!this.auth.currentUser || this.auth.currentUser.userEmail == ''){
+      this.router.navigateByUrl('/signin');
+    }
+    else{
+      this.router.navigateByUrl('/funds')
+    }
+       
   }
 
 }

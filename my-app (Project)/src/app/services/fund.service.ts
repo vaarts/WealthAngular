@@ -26,6 +26,7 @@ export class FundService {
   getAllByFundAmc(fundAmc :string){
     this.http.get<Fund[]>('http://localhost:8080/funds/'+ fundAmc).subscribe((res)=>{
       this.funds = res;
+      console.log(res)
     });
   }
 
@@ -34,6 +35,14 @@ export class FundService {
       this.funds = res;
     });
   }
+
+  searchByName(fundName :string){
+    this.http.get<Fund[]>('http://localhost:8080/search/'+ fundName).subscribe((res)=>{
+      this.funds = res;
+      console.log(res)
+    });
+  }
+
 
   getByReturn(fhTotal :number){
     this.http.get<Fund[]>('http://localhost:8080/fundsReturn/'+ fhTotal).subscribe((res)=>{
@@ -90,7 +99,6 @@ export class FundService {
     });
   }
 
- 
-
+  
 
 }

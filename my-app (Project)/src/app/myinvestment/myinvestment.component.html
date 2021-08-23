@@ -1,38 +1,10 @@
 <body>
-    <div class="container">
+    <div class="container shadow">
         <div class="table-wrapper">
-            <div class="table-title">
+            <div class="table-title mt-2">
                 <div class="row">
                     <div class="col-sm-4 headst">
-                        <h2>My <b>Investments</b></h2>
-                    </div>
-                </div>
-            </div>
-            <div class="table-filter">
-                <div class="row">
-                    <div class="col-sm-9">
-                        <div class="filter-group">
-                            <label>fund Name</label>
-                            <select class="form-control">
-                                <option>All</option>
-                                <option>Berlin</option>
-                                <option>London</option>
-                                <option>Madrid</option>
-                                <option>New York</option>
-                                <option>Paris</option>
-                            </select>
-                        </div>
-                        <div class="filter-group">
-                            <label>AMC</label>
-                            <select class="form-control">
-                                <option>Any</option>
-                                <option>Delivered</option>
-                                <option>Shipped</option>
-                                <option>Pending</option>
-                                <option>Cancelled</option>
-                            </select>
-                        </div>
-                        <span class="filter-icon"><i class="fa fa-filter"></i></span>
+                        <h2><b>My Investments</b></h2>
                     </div>
                 </div>
             </div>
@@ -43,105 +15,21 @@
                         <th>Fund Name</th>
                         <th>AMC</th>
                         <th>Buy Date</th>
+                        <th>Type</th>
                         <th>Amount</th>
-                        <th>Net Amount</th>
-                        <th>Withdraw</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>
-                            <a href="#"><img src="/examples/images/avatar/1.jpg" class="avatar" alt="Avatar" />
-                                Michael Holz</a>
-                        </td>
-                        <td>London</td>
-                        <td>Jun 15, 2017</td>
-                        <td><span class="status text-success">&bull;</span> Delivered</td>
-                        <td>$254</td>
-                        <td>
-                            <a class="view" title="View Details" data-toggle="tooltip"><i
-                                    class="material-icons">&#xE5C8;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>
-                            <a href="#"><img src="/examples/images/avatar/2.jpg" class="avatar" alt="Avatar" />
-                                Paula Wilson</a>
-                        </td>
-                        <td>Madrid</td>
-                        <td>Jun 21, 2017</td>
-                        <td><span class="status text-info">&bull;</span> Shipped</td>
-                        <td>$1,260</td>
-                        <td>
-                            <a href="#" class="view" title="View Details" data-toggle="tooltip"><i
-                                    class="material-icons">&#xE5C8;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>
-                            <a href="#"><img src="/examples/images/avatar/3.jpg" class="avatar" alt="Avatar" />
-                                Antonio Moreno</a>
-                        </td>
-                        <td>Berlin</td>
-                        <td>Jul 04, 2017</td>
-                        <td><span class="status text-danger">&bull;</span> Cancelled</td>
-                        <td>$350</td>
-                        <td>
-                            <a href="#" class="view" title="View Details" data-toggle="tooltip"><i
-                                    class="material-icons">&#xE5C8;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>
-                            <a href="#"><img src="/examples/images/avatar/4.jpg" class="avatar" alt="Avatar" />
-                                Mary Saveley</a>
-                        </td>
-                        <td>New York</td>
-                        <td>Jul 16, 2017</td>
-                        <td><span class="status text-warning">&bull;</span> Pending</td>
-                        <td>$1,572</td>
-                        <td>
-                            <a href="#" class="view" title="View Details" data-toggle="tooltip"><i
-                                    class="material-icons">&#xE5C8;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>
-                            <a href="#"><img src="/examples/images/avatar/5.jpg" class="avatar" alt="Avatar" />
-                                Martin Sommer</a>
-                        </td>
-                        <td>Paris</td>
-                        <td>Aug 04, 2017</td>
-                        <td><span class="status text-success">&bull;</span> Delivered</td>
-                        <td>$580</td>
-                        <td>
-                            <a href="#" class="view" title="View Details" data-toggle="tooltip"><i
-                                    class="material-icons">&#xE5C8;</i></a>
-                        </td>
+                <tbody >
+                    <tr *ngFor="let user of userFundService.userFundHistory; index as i">
+                        <td>{{i+1}}</td>
+                        <td>{{user[0]}}</td>
+                        <td>{{user[1]}}</td>
+                        <td>{{user[4]}}</td>
+                        <td>{{user[2]}}</td>
+                        <td>{{user[3]}}</td>
                     </tr>
                 </tbody>
             </table>
-            <div class="clearfix">
-                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-                <ul class="pagination">
-                    <li class="page-item disabled"><a href="#">Previous</a></li>
-                    <li class="page-item"><a href="#" class="page-link">1</a></li>
-                    <li class="page-item"><a href="#" class="page-link">2</a></li>
-                    <li class="page-item"><a href="#" class="page-link">3</a></li>
-                    <li class="page-item active">
-                        <a href="#" class="page-link">4</a>
-                    </li>
-                    <li class="page-item"><a href="#" class="page-link">5</a></li>
-                    <li class="page-item"><a href="#" class="page-link">6</a></li>
-                    <li class="page-item"><a href="#" class="page-link">7</a></li>
-                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                </ul>
-            </div>
         </div>
     </div>
 </body>

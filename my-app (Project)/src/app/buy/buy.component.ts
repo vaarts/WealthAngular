@@ -12,6 +12,7 @@ import { FundService } from '../services/fund.service';
 })
 export class BuyComponent implements OnInit {
   
+  successFlag: boolean;
   userFund:UserFund;
 
 
@@ -20,6 +21,7 @@ export class BuyComponent implements OnInit {
   constructor(public fundService: FundService , public auth: AuthService,
      public router:Router, public userFundService: UserfundService) {
        this.userFund = new UserFund;
+       this.successFlag = false;
       }
 
   ngOnInit(): void {
@@ -28,6 +30,7 @@ export class BuyComponent implements OnInit {
   }
 
   addUserFund(){
+    this.successFlag = false;
     this.userFund.userId = this.auth.currentUser.userId;
     this.userFund.ufDate = this.date;
     this.userFund.fundId = this.fundService.fundDetails[0][12];
@@ -35,7 +38,12 @@ export class BuyComponent implements OnInit {
     // console.log(this.userFund)
     this.userFundService.addUserFund(this.userFund).subscribe(
       (res)=>{
-        this.userFund = new UserFund();
+        if(res){
+          this.userFund = new UserFund();
+          this.successFlag = true;
+          
+        }
+        
 
         console.log(res);
       }

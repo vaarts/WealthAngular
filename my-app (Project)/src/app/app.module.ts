@@ -20,6 +20,7 @@ import { DetailfundsComponent } from './detailfunds/detailfunds.component';
 import { BuyComponent } from './buy/buy.component';
 import { MyinvestmentComponent } from './myinvestment/myinvestment.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export const routes: Routes = [
   {
@@ -83,6 +84,7 @@ export const routes: Routes = [
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
     
   ],
   providers: [FundService],
