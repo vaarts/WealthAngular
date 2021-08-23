@@ -11,12 +11,16 @@ export class FundService {
   fundsRisk:string[];
   fundHistory:any;
   fundDetails:any;
+  fundID:number;
+  fundType:String;
 
   constructor(public http: HttpClient) { 
     this.funds=[];
     this.fundsAmc=[];
     this.fundsRisk=[];
     this.fundHistory=[];
+    this.fundID=0
+    this.fundType=''
   }
 
   getAllByFundAmc(fundAmc :string){
@@ -82,6 +86,7 @@ export class FundService {
     this.http.get<Fund[]>('http://localhost:8080/fundsById/'+ fundId).subscribe((res)=>{
       this.fundDetails = res;
       console.log(res)
+      // this.fundID = this.fundDetails[12]
     });
   }
 

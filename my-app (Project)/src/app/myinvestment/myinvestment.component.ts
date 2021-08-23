@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-myinvestment',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyinvestmentComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth: AuthService, public router:Router) { }
 
   ngOnInit(): void {
+    if (!this.auth.currentUser || this.auth.currentUser.userEmail == '')
+       this.router.navigateByUrl('/signin');
   }
 
 }

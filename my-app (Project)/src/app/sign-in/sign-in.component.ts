@@ -1,5 +1,6 @@
   
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../model/user';
 import { AuthService } from '../services/auth.service';
 
@@ -12,13 +13,19 @@ export class SignInComponent implements OnInit {
   user: User;
   successFlag: boolean;
   errorFlag: boolean;
+  emailError:boolean;
   
-  constructor(public auth: AuthService) {
+  constructor(public auth: AuthService, public router: Router) {
     this.user = new User();
     this.successFlag = false;
     this.errorFlag = false;
+    this.emailError=false;
   }
   ngOnInit(): void {}
+
+  // isHome(){
+  //   return this.router.url.includes("");
+  // }
 
   signInSubmit(signInForm: any) {
     this.successFlag = false;
@@ -60,7 +67,10 @@ export class SignInComponent implements OnInit {
         }
       },
       (error) => {
-        this.errorFlag = true;
+        // this.errorFlag = true;
+        if(error.status==500){
+          this.emailError=true;
+        }
       }
     );
   }

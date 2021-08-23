@@ -10,11 +10,12 @@
         <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab" id="green"><i
-                class="fas fa-user mr-1" ></i>
+                class="fas fa-user mr-1"></i>
               Sign In</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab" id="green"><i class="fas fa-user-plus mr-1"></i>
+            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab" id="green"><i
+                class="fas fa-user-plus mr-1"></i>
               Sign Up</a>
           </li>
         </ul>
@@ -69,8 +70,8 @@
               <div class="options text-center text-md-right mt-1">
                 <p>Forgot <a href="#" class="blue-text" id="green">Password?</a></p>
               </div>
-              <button type="button" class="btn btn-outline-info waves-effect ml-auto" routerLink=""
-                data-dismiss="modal" id="bgreen">Close</button>
+              <button type="button" class="btn btn-outline-info waves-effect ml-auto" routerLink="" data-dismiss="modal"
+                id="bgreen">Close</button>
             </div>
 
           </div>
@@ -105,7 +106,7 @@
                   <input type="text" class="form-control" id="userPhoneNumber" name="userPhoneNumber"
                     [(ngModel)]="user.userPhoneNumber" #name="ngModel" placeholder="enter Phone Number" required />
                   <p class="small text-danger my-2" *ngIf="name.dirty && name.invalid">
-                    Phone Number  can't be empty !
+                    Phone Number can't be empty !
                   </p>
                 </div>
 
@@ -114,7 +115,7 @@
                   <input type="text" class="form-control" id="userAge" name="userAge" [(ngModel)]="user.userAge"
                     #name="ngModel" placeholder="enter Age" required />
                   <p class="small text-danger my-2" *ngIf="name.dirty && name.invalid">
-                    Age  can't be empty !
+                    Age can't be empty !
                   </p>
                 </div>
 
@@ -127,7 +128,8 @@
                   </p>
                 </div>
 
-                <button type="submit" class="btn btn-primary" [disabled]="signUpForm.pristine || signUpForm.invalid" id="bgreen">
+                <button type="submit" class="btn btn-primary" [disabled]="signUpForm.pristine || signUpForm.invalid"
+                  id="bgreen">
                   Submit
                 </button>
               </form>
@@ -146,12 +148,18 @@
                   There was an unexpected error. We couldn't complete your request.
                 </div>
               </div>
+              <div class="alert alert-danger d-flex align-items-center mt-2" role="alert" *ngIf="emailError">
+                <i class="material-icons"> warning </i>
+                <div class="ms-2">
+                  UserEmail already exists!!
+                </div>
+              </div>
 
             </div>
             <!--Footer-->
             <div class="modal-footer">
-              <button type="button" class="btn btn-outline-info waves-effect ml-auto"
-                data-dismiss="modal" id="bgreen">Close</button>
+              <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal" routerLink=""
+                id="bgreen">Close</button>
             </div>
           </div>
           <!--/.Panel 8-->
@@ -163,3 +171,6 @@
     <!--/.Content-->
   </div>
 </div>
+<!-- <div *ngIf="isHome() else elseBlock"><app-home></app-home></div>
+<ng-template #elseBlock> <app-hfund></app-hfund> </ng-template> -->
+<app-home></app-home>
