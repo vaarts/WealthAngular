@@ -31,4 +31,14 @@ export class HomefundComponent implements OnInit {
        
   }
 
+  searchFund(name:string) {
+    this.fundService.getAllByFundAmc(name);
+    name = ''
+    if (this.router.url !== 'funds') {
+      this.fundService.searchFlag = true
+      this.router.navigateByUrl('/funds');
+    }
+
+  }
+
 }

@@ -29,7 +29,7 @@ export class BuyComponent implements OnInit {
        this.router.navigateByUrl('/signin');
   }
 
-  addUserFund(){
+  addUserFund(isValue:any){
     this.successFlag = false;
     this.userFund.userId = this.auth.currentUser.userId;
     this.userFund.ufDate = this.date;
@@ -41,7 +41,7 @@ export class BuyComponent implements OnInit {
         if(res){
           this.userFund = new UserFund();
           this.successFlag = true;
-          
+          isValue.form.markAsPristine();
         }
         
 

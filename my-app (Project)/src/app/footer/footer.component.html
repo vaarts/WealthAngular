@@ -80,13 +80,13 @@
           <h5 class="text-uppercase font-weight-bold">Useful links</h5>
           <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
           <p>
-            <a class="text-light" routerLink="/myprofile">Your Account</a>
+            <a class="text-light" data-toggle="modal" data-target="#modalLRForm" (click)="isSignin()">Your Account</a>
           </p>
           <p>
             <a class="text-light" href="#!">About Us</a>
           </p>
           <p>
-            <a class="text-light" href="#!">Pricing</a>
+            <a class="text-light" routerLink="/funds">Pricing</a>
           </p>
           <p>
             <a class="text-light" href="#!">Help & Support</a>
@@ -104,7 +104,7 @@
           <a  class="text-light" routerLink="/funds">Mutual Funds</a>
         </p>
         <p>
-          <a class="text-light" href="#!">Open Account</a>
+          <a class="text-light" routerLink="/signin" data-toggle="modal" data-target="#modalLRForm">Open Account</a>
         </p>
 
       </div>

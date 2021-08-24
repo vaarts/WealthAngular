@@ -13,6 +13,7 @@ export class FundService {
   fundDetails:any;
   fundID:number;
   fundType:String;
+  searchFlag: boolean
 
   constructor(public http: HttpClient) { 
     this.funds=[];
@@ -21,6 +22,7 @@ export class FundService {
     this.fundHistory=[];
     this.fundID=0
     this.fundType=''
+    this.searchFlag = false
   }
 
   getAllByFundAmc(fundAmc :string){
@@ -62,6 +64,18 @@ export class FundService {
     this.http.get<string[]>('http://localhost:8080/fundAmc').subscribe((res)=>{
       this.fundsAmc = res;
       
+    });
+  }
+
+  orderbyFundName(){
+    this.http.get<Fund[]>('http://localhost:8080/fundsOrder').subscribe((res)=>{
+      this.funds = res;
+    });
+  }
+  
+  orderbyFundAum(){
+    this.http.get<Fund[]>('http://localhost:8080/fundsOrderByAum').subscribe((res)=>{
+      this.funds = res;
     });
   }
 

@@ -17,27 +17,27 @@
               <a routerLink="/funds" style="font-size: 20px;  " id="green">
                 <b>View all </b></a>
             </div>
-            <div >
+            <div>
               <div class="animate__animated animate__fadeInUp">
                 <div class="row" style="margin-left:100px ;">
-                  <div class="col-sm-6">
-                    <div class="border-0 shadow card design pointer"  routerLink="/funds">
+                  <div class="col-sm-6 mt-4" *ngFor="let fundamc of fundService.fundsAmc| slice:0:6; let i=index">
+                    <div class="border-0 shadow card design pointer" routerLink="/funds" (click)="searchFund(fundamc)">
                       <div class="card-body">
-                        <h5 class="card-title" id="font" style="color: darkslategrey;">ICICI Mutual Funds</h5>
+                        <h5 class="card-title" id="font" style="color: darkslategrey;">{{fundamc}} Mutual Funds</h5>
 
                       </div>
                     </div>
                   </div>
-                  <div class="col-sm-6">
+                  <!-- <div class="col-sm-6">
                     <div class="border-0 shadow card design pointer" routerLink="/funds">
                       <div class="card-body">
                         <h5 class="card-title" id="font" style="color: darkslategrey; ">Axis Mutual Funds</h5>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
               </div>
-              <div class="mt-3 animate__animated animate__fadeInUp">
+              <!-- <div class="mt-3 animate__animated animate__fadeInUp">
                 <div class="row" style="margin-left:100px ;">
                   <div class="col-sm-6">
                     <div class="border-0 shadow card design pointer" routerLink="/funds">
@@ -74,7 +74,7 @@
                     </div>
                   </div>
                 </div>
-              </div> 
+              </div>  -->
             </div>
           </div>
 

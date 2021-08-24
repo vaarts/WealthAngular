@@ -1,8 +1,9 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Fund } from './../model/fund';
 import { FundService } from './../services/fund.service';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { User } from '../model/user';
 
 @Component({
   selector: 'app-navbar',
@@ -10,33 +11,42 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  
-  userName:string;
-  fund:Fund;
-  fundId:number;
-  constructor(public auth: AuthService, public fundService:FundService, public router:Router) { 
-    this.userName='';
-    this.fund= new Fund;
-    this.fundId=0;
+
+  userName: string;
+  fund: Fund;
+  fundId: number;
+  fundName:string;
+  constructor(public auth: AuthService, public fundService: FundService, public router: Router, public ar: ActivatedRoute) {
+    this.userName = '';
+    this.fund = new Fund;
+    this.fundId = 0;
+    this.fundName=''
   }
 
-  
+  ngOnInit(): void {
+    this.fundService.getFunds();
+  }
 
-  ngOnInit(): void {  }
-
-  navauth(){
-    if (this.auth.currentUser.userEmail == ''){
+  navauth() {
+    if (this.auth.currentUser.userEmail == '') {
       return true
     }
-    else{
+    else {
       return false
     }
   }
 
-  searchFund(name:string){
-    this.fundService.getAllByFundAmc(name);
-    this.router.navigateByUrl('/funds/' + name );
+  loggedOut() {
+    this.auth.currentUser = new User;
   }
-  
 
+  searchFund(name: string) {
+    this.fundService.getAllByFundAmc(name);
+    this.fundName = ''
+    if (this.router.url !== 'funds') {
+      this.fundService.searchFlag = true
+      this.router.navigateByUrl('/funds');
+    }
+
+  }
 }

@@ -38,14 +38,14 @@
       <div class="vr"></div>
     </div>
     <div style="margin-left: 100px;">
-      <form (ngSubmit)="addUserFund()" *ngIf="!successFlag">
+      <form (ngSubmit)="addUserFund(isValue)" #isValue=ngForm *ngIf="!successFlag">
         <div class="form-group" style="margin-top: 90px;">
           <input type="number" class="form-control" placeholder="Enter Amount" name="ufAmount"
-            [(ngModel)]="userFund.ufAmount" ngDefaultControl #ufAmount="ngModel">
+            [(ngModel)]="userFund.ufAmount" ngDefaultControl #ufAmount="ngModel" required>
         </div>
         <p class="text-muted" style="text-align: center;">{{date}}</p>
         <p class="text-muted" style="text-align: center; margin-top: -10px;">Last Updated: 20 Mar 2021</p>
-        <button type="submit" class="btn"
+        <button type="submit" class="btn" [disabled] = "isValue.pristine || isValue.invalid "
           style="color: white; background-color: darkslategrey; margin-left: 60px; align-content: center;">Confirm</button>
       </form>
       <div class="alert alert-success d-flex align-items-center" role="alert" *ngIf="successFlag"
