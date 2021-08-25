@@ -55,7 +55,7 @@
                 <i class="material-icons">check_circle</i>
                 <div class="ms-2">
                   Login is successfull ! Click
-                  <a id="login" routerLink="" data-dismiss="modal" style="color:darkslategrey">here</a> to go to home.
+                  <a id="login" routerLink="" data-dismiss="modal">here</a> to go to home.
                 </div>
               </div>
 
@@ -67,9 +67,9 @@
 
             <!--Footer-->
             <div class="modal-footer">
-              <div class="options text-center text-md-right mt-1">
+              <!-- <div class="options text-center text-md-right mt-1">
                 <p>Forgot <a href="#" class="blue-text" id="green">Password?</a></p>
-              </div>
+              </div> -->
               <button type="button" class="btn btn-outline-info waves-effect ml-auto" routerLink="" data-dismiss="modal"
                 id="bgreen">Close</button>
             </div>
@@ -148,7 +148,7 @@
                   There was an unexpected error. We couldn't complete your request.
                 </div>
               </div>
-              <div class="alert alert-danger d-flex align-items-center mt-2" role="alert" *ngIf="emailError">
+              <div class="alert alert-danger d-flex align-items-center mt-2" role="alert" *ngIf="emailError ">
                 <i class="material-icons"> warning </i>
                 <div class="ms-2">
                   UserEmail already exists!!

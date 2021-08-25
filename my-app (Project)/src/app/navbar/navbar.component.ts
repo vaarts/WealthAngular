@@ -41,7 +41,7 @@ export class NavbarComponent implements OnInit {
   }
 
   searchFund(name: string) {
-    this.fundService.getAllByFundAmc(name);
+    this.fundService.searchByName(name);
     this.fundName = ''
     if (this.router.url !== 'funds') {
       this.fundService.searchFlag = true

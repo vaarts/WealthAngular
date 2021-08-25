@@ -9,14 +9,14 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./myinvestment.component.css']
 })
 export class MyinvestmentComponent implements OnInit {
-
-  constructor(public userFundService:UserfundService, public auth:AuthService, public router: Router) { }
+  constructor(public userFundService:UserfundService, public auth:AuthService, public router: Router) {   }
 
   ngOnInit(): void {
     if (!this.auth.currentUser || this.auth.currentUser.userEmail == ''){
        this.router.navigateByUrl('/signin');
     }
     this.userFundService.getFundHistoryByUserId(this.auth.currentUser.userId);
+    this.userFundService.findTotalFund(this.auth.currentUser.userId);
   }
 
   getByUserId(){

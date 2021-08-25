@@ -69,6 +69,7 @@ export class SignInComponent implements OnInit {
       (error) => {
         // this.errorFlag = true;
         if(error.status==500){
+          this.errorFlag=true;
           this.emailError=true;
         }
       }
